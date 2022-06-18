@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300&family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&
+family=Poppins:wght@400;500;600;700&family=Prata&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Responsive</title>
+  </head>
+  <body>
+    <main>
+      <div class="parent">
+        <div class="parent-content">
+          <section class="child1">
+            <div class="child1-1">
+              <h3>Learn to code by watching others</h3>
+            </div>
+
+            <div class="child1-2">
+              <p>
+                See how experienced developers solve problems in real-time.
+                Watching scripted tutorials is great, but understanding how
+                developers think is invaluable.
+              </p>
+            </div>
+          </section>
+
+          <section class="child2">
+            <div class="child2-1">
+              Try it free 7 days then $20/mo. thereafter
+            </div>
+            <div class="form">
+              <form>
+                <div class="input--container">
+                  <input type="text" placeholder="First name" />
+                </div>
+
+                <div class="input--container">
+                  <input type="text" placeholder="Last name" />
+                </div>
+
+                <div class="input--container">
+                  <input type="email" placeholder="Email Address" />
+                </div>
+
+                <div class="input--container">
+                  <input type="password" placeholder="Password" />
+                </div>
+                <button type="submit">CLAIM YOUR FREE TRIAL</button>
+                <p>
+                  By clicking the button, you are agreeing to our
+                  <a href="#">Terms and Services</a>
+                </p>
+              </form>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <script async defer>
+      const input = document.querySelectorAll("input");
+      document.querySelector("button").addEventListener("click", function (e) {
+        e.preventDefault();
+        input.forEach((inpEl) => {
+          if (!inpEl.value) {
+            inpEl.classList.add("error");
+            inpEl.parentElement.classList.add("error-div");
+          } else {
+            inpEl.classList.remove("error");
+            inpEl.parentElement.classList.remove("error-div");
+          }
+        });
+      });
+      input.forEach((inpEl) => {
+        inpEl.addEventListener("input", function () {
+          inpEl.parentElement.classList.remove("error-div");
+          inpEl.classList.remove("error");
+        });
+      });
+    </script>
+  </body>
+</html>
